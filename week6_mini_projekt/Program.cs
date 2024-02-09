@@ -1,7 +1,8 @@
-﻿// See https://aka.ms/new-console-template for more information
-using week6_mini_projekt;
+﻿using week6_mini_projekt;
 
-Console.WriteLine("Hello, World!");
-
+// set newProduct to a new Product based on user input or null if user quit the process of creating new Product
 Product newProduct = Utils.UserCreateProduct();
-Display.DisplayColorMsg("THE END", "yellow");
+
+if (newProduct != null) { Display.DisplayColorMsg("THE END newProduct EXIST", "yellow"); }
+    
+else { Display.DisplayColorMsg("THE END DONT newProduct EXIST", "yellow"); }

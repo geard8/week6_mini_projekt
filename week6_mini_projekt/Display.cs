@@ -2,9 +2,10 @@
 {
     public static class Display
     {
+        // DisplayColorMsg is used to write out text to consol with a selection pre defined amount of color ment to be used for diffrent purpose.
         public static void DisplayColorMsg(string msg, string color)
         {
-            // red is ment to be used misstake, ex something did not validate.
+            // red is ment to be used for misstakes or errors, ex something did not validate.
             if (color == "red")
             {
                 Console.ForegroundColor = ConsoleColor.Red;
