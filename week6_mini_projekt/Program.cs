@@ -9,18 +9,14 @@ while (true)
     // if user as created a new Product added it to list Products. Products is a static list from class Product.
     if (newProduct != null) 
     { 
-        Display.DisplayColorMsg("THE END newProduct EXIST SO ADDING IT TO LIST", "yellow");
         Product.Products.Add(newProduct);
     }
     // else user has quit making new product then break while loop for making new products.
     else 
     { 
-        Display.DisplayColorMsg("THE END DONT newProduct EXIST SO BREAKING WHILE LOOP", "yellow");
         break;
     }
 }
 
-foreach (Product product in Product.Products)
-{
-    Display.DisplayColorMsg("product: " + product.Category + product.Name + product.Price, "yellow");
-}
+// Show all products to user in a sorted way(low to high price) and total sum of all products price.
+Product.ShowProducts();
