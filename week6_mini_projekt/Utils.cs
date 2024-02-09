@@ -13,16 +13,23 @@
             string newCategory;
             string newName;
             float newPriceFloat;
+            int maxLength = 25; // max length for newCategory and newName
 
             Console.WriteLine("Add a new product - follow the steps | Done adding product - enter only: \"Q\"");
 
             // get user input for newCategory
             while (true)
             {
+                
+
                 Console.Write("Enter a Category: ");
                 newCategory = Console.ReadLine();
                 if (newCategory == "q" ||  newCategory == "Q") {return null;}
-                if (newCategory.Trim().Length != 0) { break; }
+                else if (newCategory.Length > maxLength) 
+                { 
+                    Display.DisplayColorMsg("Too long can't be longer then " + maxLength + " characters", "red"); 
+                }
+                else if (newCategory.Trim().Length != 0) { break; }
                 else
                 {
                     Display.DisplayColorMsg("Category can not be empty", "red");
@@ -35,7 +42,11 @@
                 Console.Write("Enter a Name: ");
                 newName = Console.ReadLine();
                 if (newName == "q" || newName == "Q") { return null; }
-                if (newName.Trim().Length != 0) { break; }
+                else if (newName.Length > maxLength)
+                {
+                    Display.DisplayColorMsg("Too long can't be longer then " + maxLength + " characters", "red");
+                }
+                else if (newName.Trim().Length != 0) { break; }
                 else
                 {
                     Display.DisplayColorMsg("Name can not be empty", "red");
@@ -48,7 +59,7 @@
                 Console.Write("Enter a Price: ");
                 string newPriceStr = Console.ReadLine();
                 if (newPriceStr == "q" || newPriceStr == "Q") { return null; }
-                if (!float.TryParse(newPriceStr, out newPriceFloat))
+                else if (!float.TryParse(newPriceStr, out newPriceFloat))
                 {
                     Display.DisplayColorMsg("Not a valid price. Exemple of valid price is: 31 or 43,99", "red");
                 }

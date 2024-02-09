@@ -20,7 +20,7 @@ namespace week6_mini_projekt
         {
             // Sort Products based on price from low to high price then Category then Name in preperation to show it to user.
             var sortedProducts = Products.OrderBy(x => x.Price).ThenBy(x => x.Category).ThenBy(x => x.Name);
-            int padRightAmount = 18; // Amount of Right padding used when showing list of products
+            int padRightAmount = 27; // Amount of Right padding used when showing list of products
 
             Console.WriteLine("Here are all currently made products");
             Console.WriteLine("------------------------------------");
