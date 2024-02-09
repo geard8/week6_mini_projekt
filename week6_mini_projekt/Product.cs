@@ -18,14 +18,15 @@ namespace week6_mini_projekt
         // Show sorted list of all products(Price asending, Category Asending, Name Asending) and with a total sum of price at the end.
         static public void ShowProducts()
         {
-            // Sort Products based on price from low to high price then Category then Name in preperation show it to user.
+            // Sort Products based on price from low to high price then Category then Name in preperation to show it to user.
             var sortedProducts = Products.OrderBy(x => x.Price).ThenBy(x => x.Category).ThenBy(x => x.Name);
+            int padRightAmount = 18; // Amount of Right padding used when showing list of products
 
             Console.WriteLine("Here are all currently made products");
             Console.WriteLine("------------------------------------");
-            Console.WriteLine("Category".PadRight(12) + "Name".PadRight(12) + "Price");
+            Console.WriteLine("Category".PadRight(padRightAmount) + "Name".PadRight(padRightAmount) + "Price");
             foreach (Product product in sortedProducts) {
-                Console.WriteLine(product.Category.PadRight(12) + product.Name.PadRight(12) + product.Price);
+                Console.WriteLine(product.Category.PadRight(padRightAmount) + product.Name.PadRight(padRightAmount) + product.Price);
             }
             Console.WriteLine("------------------------------------");
             Console.WriteLine("You have a total of " + Products.Count + " products and the total price of all products price is: " + Products.Sum(product => product.Price));
