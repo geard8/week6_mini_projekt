@@ -14,12 +14,12 @@
             string newName;
             float newPriceFloat;
 
-            Console.WriteLine("Add a new product - follow the steps | Done adding product - enter: \"Q\"");
+            Console.WriteLine("Add a new product - follow the steps | Done adding product - enter only: \"Q\"");
 
             // get user input for newCategory
             while (true)
             {
-                Console.WriteLine("Enter a Category: ");
+                Console.Write("Enter a Category: ");
                 newCategory = Console.ReadLine();
                 if (newCategory == "q" ||  newCategory == "Q") {return null;}
                 if (newCategory.Trim().Length != 0) { break; }
@@ -32,7 +32,7 @@
             // get user input for newName
             while (true)
             {
-                Console.WriteLine("Enter a Name: ");
+                Console.Write("Enter a Name: ");
                 newName = Console.ReadLine();
                 if (newName == "q" || newName == "Q") { return null; }
                 if (newName.Trim().Length != 0) { break; }
@@ -45,7 +45,7 @@
             // get user input for newPriceFloat
             while (true)
             {
-                Console.WriteLine("Enter a Price: ");
+                Console.Write("Enter a Price: ");
                 string newPriceStr = Console.ReadLine();
                 if (newPriceStr == "q" || newPriceStr == "Q") { return null; }
                 if (!float.TryParse(newPriceStr, out newPriceFloat))
