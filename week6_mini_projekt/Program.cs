@@ -36,7 +36,9 @@ while (true)
     // if cki is S then search for products based on name.
     else if (cki.Key == ConsoleKey.S)
     {
-        // TODO search for products based on name
+        string userSearch = Utils.UserSearchProducts();
+        Product.ShowProducts(userSearch);
+
     }
     else if (cki.Key == ConsoleKey.Q)
     {

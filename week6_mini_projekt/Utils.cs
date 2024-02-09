@@ -94,5 +94,23 @@
                 }
             }
         }
+
+        // UserSearchProducts method for geting user to input name of products whey searching for.
+        public static string UserSearchProducts()
+        {
+            while(true){
+                Console.Write("Search for product name that contaion: ");
+                string userSearch = Console.ReadLine();
+                // if user input is no character, give feedback that search can not be empty.
+                if (userSearch.Trim().Length == 0) 
+                { 
+                    Display.DisplayColorMsg("Search can not be empty", "red"); 
+                }
+                else {
+                    return userSearch; 
+                }
+                
+            }
+        }
     }
 }

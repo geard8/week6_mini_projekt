@@ -20,6 +20,13 @@
                 Console.WriteLine(msg);
                 Console.ResetColor();
             }
+            // blue is ment to be used to highlight something to draw attaction to it.
+            else if (color == "blue")
+            {
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine(msg);
+                Console.ResetColor();
+            }
             // yellow is ment for testing i shall not show up in public version unless something went wrong.
             else if (color == "yellow")
             {
